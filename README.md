@@ -1,11 +1,12 @@
 
 ### 401 Data Structures, Code Challenges
 
+#################################################
 
 Code challenge | Link | Code challenge | Link
 ------- | --------- | -------- | ----------
  code01 | [click-here]() | code21 | [click-here]()
- code02 | [click-here](https://github.com/qaisw96/data-structures-and-algorithms/blob/array-shift/javascript/arrayShift/README.md) | code22 | [click-here]()
+ code02 | [click-here]() | code22 | [click-here]()
  code03 | [click-here]() | code23 | [click-here]()
  code04 | [click-here]() | code24 | [click-here]()
  code05 | [click-here]() | code25 | [click-here]()
