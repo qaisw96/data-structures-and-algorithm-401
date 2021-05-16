@@ -1,14 +1,17 @@
-## Singly Linked List
-is a way to store data, a sequence of nodes each node contain two properties : 
+## Challenge Summary
+create methods that handle with linked list to insert after and before a node.
 
-+ value
-+ reference to the next node
+## Challenge Description
 
-## Challenge
-Create linked list class contains some methods to insert, check if value exist, return a collection of values inside linked list 
+```
+I have been asked about  extend the linked list class before, add two methods both take 2 arg , the first one to add after a node, and the second to add before
+
+```
 
 ## Approach & Efficiency
-Big O = linear time ==> O(n)
 
-## API
-<!-- Description of each method publicly available to your Linked List -->
+Logical thinking & solving step by step 
+
+## Solution
+
+![whiteboard](../../assets/images/code06.jpg)
