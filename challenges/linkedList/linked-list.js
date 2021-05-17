@@ -86,6 +86,45 @@ class LinkedList {
         }
     }
 
+    kthFromEnd(k) {
+        let currentNode = this.head
+        let count = 1;
+        while(currentNode.next) {
+            currentNode = currentNode.next
+            count++
+        }
+        let result = count - k
+        let testHappyCiel = Math.floor(count/k)
+     
+        if(k>=0) {
+
+            if(result>=1) {
+    
+                currentNode = this.head
+                
+                for(let i=0; i<result-1; i++) {
+                   currentNode = currentNode.next
+                }
+                if(testHappyCiel === 2 ) {
+                    let happyResult = {
+                        path: 'Happy Path',
+                        value: currentNode.value
+                    }
+                    return happyResult
+                } else {
+
+                    return currentNode.value;
+                }
+            }else {
+                return 'EXCEPTION'
+            }
+        } else {
+            return 'NOT POSITIVE VALUE'
+        }
+
+    }
+
+
 
    
 }

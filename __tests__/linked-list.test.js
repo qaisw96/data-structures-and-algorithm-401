@@ -58,7 +58,6 @@ describe('Linked List Test : ', () => {
 describe(' Linked List ====> CODE CHALLENGE 06', () => {
     it('1. Can successfully add a node to the end of the linked list', () => {
         const testValue = 'add to end'
-        // let newNode = new LinkedList()
         ll.insert(testValue)
 
         let current = ll.head
@@ -88,7 +87,6 @@ describe(' Linked List ====> CODE CHALLENGE 06', () => {
         const testValue = 10
         newLl.insertBefore(middle, testValue)
         
-        console.log(newLl.toString());
         expect(newLl.toString()).toEqual(`{ 1 } --> { 10 } --> { 2 } --> { 3 } --> { 4 } --> { null }`)
 
 
@@ -148,4 +146,55 @@ describe(' Linked List ====> CODE CHALLENGE 06', () => {
         expect(current.value).toEqual(newVal)
     })
 
+})
+
+
+// // test for code challenge 06
+let newLl = new LinkedList()
+newLl.insert(2)
+newLl.insert(4)
+newLl.insert(6)
+newLl.insert(8)
+newLl.insert(10)
+newLl.insert(12)
+newLl.insert(14)
+newLl.insert(16)
+newLl.insert(18)
+newLl.insert(20)
+
+describe('Linked List ====> CODE CHALLENGE 07', () => {
+    it('Where k is greater than the length of the linked list', () => {
+
+        expect(newLl.kthFromEnd(22)).toEqual('EXCEPTION')
+    })
+
+    it('Where k and the length of the list are the same', () => {
+        let newList = new LinkedList()
+        newList.insert(1)
+        newList.insert(2)
+        newList.insert(3)
+        newList.insert(4)
+        newList.insert(5)
+        console.log(newList.toString());
+        expect(newList.kthFromEnd(5)).toEqual('EXCEPTION')
+    })
+
+    it('Where k is not a positive integer', () => {
+        expect(newLl.kthFromEnd(-5)).toEqual('NOT POSITIVE VALUE')
+    })
+
+    it('Where the linked list is of a size 1', () => {
+        let newLL = new LinkedList()
+        newLL.insert(4)
+        
+        expect(newLL.kthFromEnd(2)).toEqual('EXCEPTION')
+    })
+
+    it('Happy Path ????!!!!', () => {
+        // i have 10 nodes in  newLl, so if the k=4 || k=5 ===> should i be in happy path
+
+        let result =  newLl.kthFromEnd(4)
+        console.log(result);
+        expect(result.path).toEqual('Happy Path')
+    })
 })
