@@ -1,3 +1,7 @@
+
+## ------------------------------------ CODE 06 ------------------------------------------
+
+
 ## Challenge Summary
 create methods that handle with linked list to insert after and before a node.
 
@@ -15,3 +19,25 @@ Logical thinking & solving step by step
 ## Solution
 
 ![whiteboard](../../assets/images/code06.jpg)
+
+
+## ------------------------------------ CODE 07 ------------------------------------------
+
+
+## Challenge Summary
+ Return the node’s value that is k from the end of the linked list
+ 
+## Challenge Description
+
+```
+Write a method for the Linked List class which takes a number, k, as a parameter. Return the node’s value that is k from the end of the linked list
+
+```
+
+## Approach & Efficiency
+
+Logical thinking & solving step by step 
+
+## Solution
+
+![whiteboard](../../assets/images/code07.jpg)
