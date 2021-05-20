@@ -1,92 +1,50 @@
-'use strict' 
+'use strict';
 
-class Node {
-    constructor(value) {
-        this.value = value;
-        this.next = null;
+const LinkedList = require('../linkedList/linked-list')
+
+
+
+function zipLists(Ll1, Ll2) { 
+    let newLl = new LinkedList()
+
+    let Ll1Length = Ll1.linkedLength(Ll1)
+    let Ll2Length = Ll2.linkedLength(Ll2)
+    let longerN;
+    let shorterN;
+
+    if(Ll1Length>= Ll2Length) {
+        longerN = Ll1Length
+        shorterN = Ll2Length
+    }  else {
+        longerN = Ll2Length
+        shorterN = Ll1Length
     }
+
+    let currentN1 = Ll1.head
+    let currentN2 = Ll2.head
+    for(let i=0; i<longerN; i++) {
+        if(Ll2Length>=Ll1Length){
+
+            if(shorterN) {
+                newLl.insert(currentN1.value)
+                currentN1 = currentN1.next
+                shorterN--
+            }  
+            newLl.insert(currentN2.value)
+            currentN2 = currentN2.next
+            } else {
+                newLl.insert(currentN1.value)
+                currentN1 = currentN1.next
+                
+                if(shorterN) {
+                    newLl.insert(currentN2.value)
+                    currentN2 = currentN2.next
+                    shorterN--
+                }  
+        }
+    }
+
+    return newLl
 }
 
-class LinkedList {
-    constructor() {
-        this.head = null;
-    }
-
-    insert(value) {
-        let node = new Node(value);
-        if(!this.head) {
-            this.head = node
-        } else {
-            let currentNode = this.head
-            while(currentNode.next) {
-                currentNode = currentNode.next
-            }
-            currentNode.next = node
-        }
-    }
-
-
-    toString() {
-        let current = this.head
-        let collection = `{ ${current.value} } --> `
-        while (current.next) {
-            current = current.next
-            collection+= `{ ${current.value} } --> `
-            if(current.next == null) {
-                collection+= `{ ${current.next} }`
-            }
-        }
-        return collection
-    }
-
-    linkedListLength(LL) {
-        let current = LL.head
-        let count = 0;
-        while(current) {
-            current = current.next
-            count++
-        }
-        return count
-    }
-
-
-}
-
-
-
-function zipLists(newNode1, newNode2) {
-    
-    let currentNode1 = newNode1.head
-    let currentNode2 = newNode2.head
-
-    let newLL = new LinkedList()
-    let LL1Length = newLL.linkedListLength(newNode1)
-    let LL2Length = newLL.linkedListLength(newNode2)
-
-    let checkMore;
-    let checkLess;
-
-    if(LL1Length>LL2Length) {
-        checkMore = currentNode2
-        checkLess = currentNode1
-        
-    } else {
-        checkMore = currentNode1
-        checkLess = currentNode2
-    }
-
-    while(checkMore) {
-        
-        if(checkLess) {
-            newLL.insert(checkLess.value)
-            checkLess = checkLess.next
-        }
-
-        newLL.insert(checkMore.value)
-        checkMore = checkMore.next
-    }
-
- 
-    console.log(newLL.toString());
-
-}
+module.exports = zipLists;
