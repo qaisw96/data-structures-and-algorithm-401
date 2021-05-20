@@ -123,16 +123,27 @@ class LinkedList {
         }
 
     }
+    linkedLength(LL) {
+        let current = LL.head
+        let count = 0;
+        while(current) {
+            current = current.next
+            count++
+        }
+        return count
+    }
 
-
-
-   
 }
-module.exports = LinkedList;
+
+
+
+
+module.exports = LinkedList
+
+
+
 
 let newNode = new LinkedList()
 newNode.insert(2)
 newNode.insert(4)
-newNode.insertBefore(2, 5)
-// newNode.insert(6)
 console.log(newNode.toString());
