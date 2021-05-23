@@ -1,5 +1,3 @@
-'use strict';
-
 class Node {
     constructor(value) {
         this.value = value;
@@ -7,93 +5,91 @@ class Node {
     }
 }
 
+
 class Stack {
-    constructor () {
+    constructor() {
         this.top = null
-        this.storage = [];
     }
 
     push(value) {
-       const newNode = new Node(value)
-       if(!newNode.next) {
-           this.storage.unshift(newNode);
-           this.top = newNode
-       }
+        if(value) {
+            const node = new Node(value)
+            const top = this.top
+            this.top = node
+            node.next = top
+        } else {
+            return 'ENTER THE VALUE IN ARG'
+        }
     }
+
 
     pop() {
-        if(!this.top) {
-            return 'EXCEPTION'
+        if (this.top) {
+            const nodeV = this.top.value
+            this.top = this.top.next
+            return nodeV
         } else {
-            const removedItem = this.storage.shift()
-            this.top = this.storage[0] || null
-            return removedItem.value
+            return 'STACK IS EMPTY'
+        }
+    }
+    
+    peek() {
+        if(this.top) {
+            return this.top
+        } else {
+            return 'STACK IS EMPTY'
         }
     }
 
-    peek() {
-        if(!this.top) {
-            return 'EXCEPTION'
-        } else {
-            return this.top;
-        }
-    }
 
     isEmpty() {
-        if(!this.top) {
-            return true
-        } else {
-            return false
-        }
+        return this.top ? false: true
     }
-
-    
 }
 
+
+let arr = []
 class Queue {
     constructor() {
         this.front = null
-        this.storage = []
-        
     }
-
+    
+    
     enqueue(value) {
-        const newNode = new Node(value)
-        if(this.storage.length == 0) {
-            this.front = newNode
+        const node = new Node(value)
+        arr.push(node)
+        if(!this.front) {
+            this.front = node;
+        } else {
+            arr[arr.length - 2].next = node
         }
-        this.storage.push(newNode)
     }
 
     dequeue() {
-        if(this.storage ==0) {
-            return 'EXCEPTION'
+        if(this.front) {
+            const nodeVal = this.front.value
+            this.front = this.front.next
+            return nodeVal
         } else {
-            const removedItem = this.storage.shift()
-            this.front = this.storage[0] || null
-            return removedItem.value
+            return 'QUEUE IS EMPTY'
+
         }
     }
-
+    
     peek() {
-        if(!this.front) {
-            return 'EXCEPTION'
-        } else {
+        if(this.front) {
             return this.front
+        } else {
+            return 'QUEUE IS EMPTY'
         }
     }
 
     isEmpty() {
-        if(this.storage == 0 ) {
-            return true
-        } else {
-            return false
-        }
+        return this.front ? false : true
     }
+       
 }
 
-// const stk = new Stack()
-// console.log(stk.push());
 
 module.exports = {
     Stack,
