@@ -19,9 +19,11 @@ describe('STACK Test : ', () => {
         stack.push(6)
                 
         let test = 6
-        for (let i = 0; i < stack.storage.length-1; i++) {
-            expect(stack.storage[i].value).toEqual(test)
+        while(stack.top) {
+            expect(stack.top.value).toEqual(test)
             test-=2  
+
+            stack.top = stack.top.next
         }
     })
     
@@ -66,8 +68,8 @@ describe('STACK Test : ', () => {
     it('7. Calling pop or peek on empty stack raises exception', () => {
         const stack = new Stack()
 
-        expect(stack.pop()).toBe('EXCEPTION')
-        expect(stack.peek()).toBe('EXCEPTION')
+        expect(stack.pop()).toBe('STACK IS EMPTY')
+        expect(stack.peek()).toBe('STACK IS EMPTY')
     })
 })
 
@@ -89,9 +91,11 @@ describe('QUEUES Test : ', () => {
         queue.enqueue(6)
                 
         let test = 2
-        for (let i = 0; i < queue.storage.length-1; i++) {
-            expect(queue.storage[i].value).toEqual(test)
+        while(queue.top) {
+            expect(queue.top.next.value).toEqual(test)
             test+=2  
+
+            queue.top = queue.top.next
         }
     })
 
@@ -136,7 +140,7 @@ describe('QUEUES Test : ', () => {
     it('14. Calling dequeue or peek on empty queue raises exception', () => {
         const queue = new Queue()
 
-        expect(queue.peek()).toBe("EXCEPTION")
-        expect(queue.dequeue()).toBe("EXCEPTION")
+        expect(queue.peek()).toBe("QUEUE IS EMPTY")
+        expect(queue.dequeue()).toBe("QUEUE IS EMPTY")
     })
 })
