@@ -1,7 +1,7 @@
 'use strict'; 
 
 // const Stack = require('../stacksAndQueues/stacks-and-queues.js').Stack
-// const Stack = require('../stacksAndQueues/stacks-and-queues')
+// // const Stack = require('../stacksAndQueues/stacks-and-queues')
 
 class Node {
     constructor(value) {
@@ -54,44 +54,42 @@ class Stack {
 
 
 
-// console.log(stack.top.value);
-// let arr = [];
 class PseudoQueue {
     constructor() {
-        this.stack = new Stack()
+        this.storage = new Stack()
     }
 
     enqueue(value) {
-        const node = new Node(value)
-        // arr.push(node)
         if(value) {
-            this.stack.push(value)
+            this.storage.push(value)
         } else {
             return 'ENTER VALUE'
         }
     }
 
     dequeue() {
-        let current =this.stack.top;
-        let beforeLast;
-        while(current.next){
-           beforeLast = current
-            current = beforeLast
-           current = current.next
-        } 
-
+        if(!(this.storage.top === null)) {
+            let currentNode = this.storage.top
+            let node = new Stack()
+            while(currentNode){
+                    node.push(currentNode.value)
+                    
+                    currentNode=currentNode.next;
+                }
+            node.pop()
+            this.storage = new Stack()
+            let current = node.top
+            while(current) {
+                this.storage.push(current.value)
+                current = current.next
+            }
+            return 'HAPPY PATH'
+        } else {
+            return 'PSEUDO IS EMPTY'
+        }
     }
 }
 
-// module.exports = PseudoQueue;
-
-const queue = new PseudoQueue()
-queue.enqueue(2)
-queue.enqueue(4)
-queue.enqueue(5)
-// console.log(queue);
-queue.dequeue()
-// queue.dequeue()
 
 
-console.log(queue);
+module.exports = PseudoQueue;
