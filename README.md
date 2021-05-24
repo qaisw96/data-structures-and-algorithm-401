@@ -16,7 +16,7 @@ Code challenge | Link | Code challenge | Link
  code09 | [click-here]() | code29 | [click-here]()   
  code10 (stacksAndQueues) | [click-here](https://github.com/qaisw96/data-structures-and-algorithm-401/blob/main/challenges/stacksAndQueues/README.md) | code30 | [click-here]()
  code11 (queueWithStacks) | [click-here](https://github.com/qaisw96/data-structures-and-algorithm-401/blob/main/challenges/queueWithStacks/README.md) | code31 | [click-here]()
- code12 | [click-here]() | code32 | [click-here]()
+ code12 (fifoAnimalShelter) | [click-here](https://github.com/qaisw96/data-structures-and-algorithm-401/blob/main/challenges/fifoAnimalShelter/README.md) | code32 | [click-here]()
  code13 | [click-here]() | code33 | [click-here]()
  code14 | [click-here]() | code34 | [click-here]()
  code15 | [click-here]() | code35 | [click-here]()
