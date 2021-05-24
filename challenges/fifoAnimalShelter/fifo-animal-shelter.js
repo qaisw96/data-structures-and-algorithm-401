@@ -1,26 +1,5 @@
 'use strict';
-class Cat {
-    constructor(name, age, type, color) {
-        this.name = name
-        this.age = age
-        this.type = type
-        this.color = color
-        this.next = null
-    }
-}
 
-class Dog extends Cat {
-    constructor(name, age, type, color) {
-        super(name, age, type, color)
-    }
-}
-
-let lucy = new Cat('lucy', 2, 'cat', 'white')
-let lam = new Dog('lam', 4, 'dog', 'black')
-let sam = new Dog('sam', 4, 'dog', 'blue')
-
-// console.log(lucy);
-// console.log(lam);
 
 class AnimalShelter {
     constructor() {
@@ -28,31 +7,42 @@ class AnimalShelter {
     }
 
     enqueue(animal) {
-        if( this.storage == null ) {
-             this.storage = animal
-            } else {
-                console.log('inside');
-
-             const newAS = this.storage
-             this.storage = animal    
-            console.log('storage', this.storage);
-            console.log('newAS', newAS);
-                
-            let current = newAS
-             while( current ) {
-                this.storage.next = current
-                console.log('this.storage', this.storage);
-            
-              current = current.next
-             }
-            //  return this
-            }
+        if(animal.type == 'cat' || animal.type == 'dog' ) {
+            if( this.storage == null ) {
+                 this.storage = animal
+                } else {
+                 const newAS = this.storage
+                 this.storage = animal
+                this.storage.next = newAS
+                }
+        } else {
+            return 'INSERT DOGS AND CATS ONLY'
+        }
     }
+    
+    dequeue(pref) {
+        if(pref == 'cat' || pref == 'dog' ) {
+
+            if(this.storage) {
+                let current = this.storage
+                let tem;
+               while(current) {
+                    if(current.type == pref) {
+                        tem = current
+                        // current.next = null
+                        // return current
+                        break;
+                    }
+                    current = current.next
+                }
+                tem.next = null;
+                return tem
+            } 
+        } else {
+            return null
+        }
+    }
+
 }
 
-let newObj = new AnimalShelter()
-newObj.enqueue(lucy)
-newObj.enqueue(lam)
-newObj.enqueue(sam)
-
-console.log(newObj);
+module.exports = AnimalShelter
