@@ -1,35 +1,35 @@
-'use strict';
+'use strict'
+
+const Stack = require('../stacksAndQueues/stacks-and-queues').Stack
 
 function multiBracketValidation(str) {
-    let brackets = str.replace(/[0-9]|[a-z]/gi, '')
-    brackets = brackets.replace(/}/g, ')').replace(/]/g, ')').replace(/\s+/g, '').split('')
-    console.log(brackets);
-    let arr = []
-    const newA =  brackets.map(elm => {
-        if(elm == '{' ||  elm== '[' || elm == '(') {
-            elm = '@'
-            arr.push(elm)
+    if(!str || typeof str === 'number') return 'ONLY STRING ACCEPTED'
+    let stack = new Stack()
+    const arr = str.split('')
+    let bracket = {
+        '}':'{',
+        ')':'(',
+        ']':'['
+      }
+    let check = true 
+    for (let i = 0; i < arr.length; i++) {
+        if(/[\{\[\(]/.test(arr[i])) {
+            stack.push(arr[i]) 
+        } else if (/[\}\]\)]/.test(arr[i]) && !stack.top) {
+           check = false;
+        } else if (/*/[\}\]\)]/.test(arr[i]) &&*/ stack.top) {
+            if( stack.top.value == bracket[arr[i]]){
+                stack.pop()
+            } 
         }
-        return elm
-    })
-    if (!(brackets.length%2)) {
-        
-        if(newA.length/arr.length == 2) {
-            console.log(true);
-        } else {
-            console.log(false);
-        }
-        
-        
-    } else {
-        console.log(false); 
     }
-    console.log(arr);
-    console.log(str);
+    let result;
+    stack.top == null && check? result = true : result = false;
+
+    return result
 }
 
-multiBracketValidation('()[[Extra Characters]]')
-
+module.exports = multiBracketValidation;
 
 
 // console.log(newA)
