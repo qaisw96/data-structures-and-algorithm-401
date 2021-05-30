@@ -1,5 +1,14 @@
 'use strict';
 
+class Node {
+    constructor (value) {
+        this.value = value;
+        this.left = null;
+        this.right = null;        
+    }
+}
+
+
 class BinaryTree {
     constructor(root = null) {
         this.root = root;
@@ -37,6 +46,22 @@ class BinaryTree {
         traverse(this.root)
         return result
 
+    }
+
+    findMaximumValue() {
+        if(this.root) {
+            let maxValue = this.root.value;
+            let traverse = (node) => {
+                if(maxValue < node.value) maxValue = node.value
+                if(node.left) traverse(node.left)
+                if(node.right) traverse(node.right)
+            }
+    
+            traverse(this.root)
+            return maxValue
+        } else {
+            return 'YOUR TREE IS EMPTY'
+        }
     }
 }
 
@@ -117,7 +142,7 @@ class BinarySearchTree {
 // let node2 = new Node(4)
 // let node3 = new Node(15)
 // let node4 = new Node(3)
-// let node5 = new Node(2)
+// let node5 = new Node(20)
 
 // let BST = new BinarySearchTree() 
 // BST.add(node)
@@ -125,7 +150,10 @@ class BinarySearchTree {
 // BST.add(node3)
 // BST.add(node4)
 // BST.add(node5)
-// console.log(BST.contains(15));
+// console.log(BST);
+
+// const BT = new BinaryTree(BST)
+// console.log(BT.findMaximumValue());
 
 module.exports = {
     BinarySearchTree,
