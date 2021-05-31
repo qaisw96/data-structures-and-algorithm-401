@@ -56,12 +56,35 @@ class BinaryTree {
                 if(node.left) traverse(node.left)
                 if(node.right) traverse(node.right)
             }
-    
             traverse(this.root)
             return maxValue
         } else {
             return 'YOUR TREE IS EMPTY'
         }
+    }
+
+    breadthFirst() {
+        if(!this.root) return 'YOUR TREE IS EMPTY'
+        let result = [];
+        result.push(this.root.value)
+        let test = 0
+        let storage;
+        let traverse = (node) => {
+            if(node.left) result.push(node.left.value)
+            if(node.right) result.push(node.right.value)
+            test++
+            // console.log(result)
+            if(test%2) {
+                storage=node
+                if(node.left) traverse(node.left)
+                if(storage.right) traverse(storage.right)
+            } else {
+                if(storage.right) traverse(storage.right)
+                if(node.left) traverse(node.left)
+            }
+        }
+        traverse(this.root)
+        return result
     }
 }
 
@@ -104,20 +127,19 @@ class BinarySearchTree {
                 } else {
 
                     if(value <= node.value) {
-                        console.log('from less');
                         if(node.left) {
                             if(node.left.value == value) {
-                                console.log(true); 
                                 return true
                             } else {
+                                traverse(node.right)
                             }
                         } else {
                             return false
                         }
                     }
                     
+                    
                     if(value > node.value) {
-                        console.log('from more');
                         if(node.right) {
                             if(node.right.value == value) {
                                 return true; 
@@ -140,9 +162,13 @@ class BinarySearchTree {
 
 // let node = new Node(9)
 // let node2 = new Node(4)
-// let node3 = new Node(15)
+// let node3 = new Node(12)
 // let node4 = new Node(3)
-// let node5 = new Node(20)
+// let node5 = new Node(5)
+// let node6 = new Node(14)
+// let node7 = new Node(11)
+// let node8 = new Node(1)
+// // let node9 = new Node(2)
 
 // let BST = new BinarySearchTree() 
 // BST.add(node)
@@ -150,10 +176,15 @@ class BinarySearchTree {
 // BST.add(node3)
 // BST.add(node4)
 // BST.add(node5)
-// console.log(BST);
+// BST.add(node6)
+// BST.add(node7)
+// BST.add(node8)
+// // BST.add(node9)
+// // console.log(BST);
 
-// const BT = new BinaryTree(BST)
-// console.log(BT.findMaximumValue());
+// const BT = new BinaryTree(BST.root)
+// console.log(BT);
+// console.log(BT.breadthFirst());
 
 module.exports = {
     BinarySearchTree,

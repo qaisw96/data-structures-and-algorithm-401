@@ -40,3 +40,26 @@ return 9
 
 ```
 
+## ---------------------------------------------------
+
+# first-breadth method
+
+## Challenge Summary
+Write a breadth first traversal method which takes a Binary Tree as its unique input traverse the input tree using a Breadth-first approach, and return a list of the values in the tree in the order they were encountered.
+## Whiteboard Process
+![](../../assets/images/code17.jpg)
+## Approach & Efficiency
+Big O ===> O ( log n )
+
+## Solution
+```
+array   5 ==> 4==> 9 
+
+array   5 ==> 4==> 9 ==> 5 ==> 2
+
+array   5 ==> 4==> 9 ==> 5 ==> 2 ==> 9 ==> 12
+
+return array
+
+
+```
