@@ -22,7 +22,7 @@ Code challenge | Link | Code challenge | Link
  code15 (Tree) | [click-here](https://github.com/qaisw96/data-structures-and-algorithm-401/blob/tree/challenges/tree/README.MD) | code35 | [click-here]()
  code16 (Find-MAx-value-tree ) | [click-here](https://github.com/qaisw96/data-structures-and-algorithm-401/blob/main/challenges/tree/README.MD#find-maximum-value) | code36 | [click-here]() 
  code17 (Breadth First) | [click-here](https://github.com/qaisw96/data-structures-and-algorithm-401/blob/main/challenges/tree/README.MD#first-breadth-method) | code37 | [click-here]()
- code18 | [click-here]() | code38 | [click-here]()
+ code18 (FizzBuzzTree) | [click-here](https://github.com/qaisw96/data-structures-and-algorithm-401/blob/main/challenges/fizzBuzzTree/README.MD) | code38 | [click-here]()
  code19 | [click-here]() | code39 | [click-here]()
  code20 | [click-here]() | code40 | [click-here]()
 
