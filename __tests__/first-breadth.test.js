@@ -38,4 +38,37 @@ describe('PSEUDO Test : ', () => {
         expect(tree.breadthFirst()).toEqual('YOUR TREE IS EMPTY')
 
     })
+
+    // it('should return an array with one value', () => {
+        //     expect(BST.breadthFirst()).toEqual([10]);
+        // });
+        
+        
+    it('should return an array with breadth first traverse', () => {
+        let BST = new BinarySearchTree();
+        BST.add(new Node(10))
+        BST.add(new Node(5))
+        BST.add(new Node(15))
+        BST.add(new Node(3))
+        BST.add(new Node(7))
+        BST.add(new Node(1))
+        BST.add(new Node(4))
+        BST.add(new Node(12))
+        BST.add(new Node(18))
+        BST.add(new Node(6))
+        BST.add(new Node(5))
+        BST.add(new Node(11))
+        BST.add(new Node(14))
+        BST.add(new Node(16))
+        BST.add(new Node(19))
+        BST.add(new Node(100));
+        let BS = new BinaryTree(BST.root)
+        console.log('from test', BS.breadthFirst());
+        expect(BS.breadthFirst()).toEqual([
+            10,  5, 15,   3, 7, 12,
+            18,  1,  4,   6, 8, 11,
+            14, 16, 19, 100
+          ])
+    });
+
 })

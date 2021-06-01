@@ -73,12 +73,12 @@ class BinaryTree {
             if(node.left) result.push(node.left.value)
             if(node.right) result.push(node.right.value)
             test++
-            // console.log(result)
             if(test%2) {
                 storage=node
                 if(node.left) traverse(node.left)
                 if(storage.right) traverse(storage.right)
             } else {
+                // console.log('from right first', result)
                 if(storage.right) traverse(storage.right)
                 if(node.left) traverse(node.left)
             }
@@ -160,31 +160,33 @@ class BinarySearchTree {
     }
 }
 
-// let node = new Node(9)
-// let node2 = new Node(4)
-// let node3 = new Node(12)
-// let node4 = new Node(3)
-// let node5 = new Node(5)
-// let node6 = new Node(14)
-// let node7 = new Node(11)
-// let node8 = new Node(1)
-// // let node9 = new Node(2)
+let node = new Node(9)
+let node2 = new Node(4)
+let node3 = new Node(12)
+let node4 = new Node(3)
+let node5 = new Node(5)
+let node6 = new Node(14)
+let node7 = new Node(11)
+let node8 = new Node(1)
+let node9 = new Node(0)
+// let node9 = new Node(2)
 
-// let BST = new BinarySearchTree() 
-// BST.add(node)
-// BST.add(node2)
-// BST.add(node3)
-// BST.add(node4)
-// BST.add(node5)
-// BST.add(node6)
-// BST.add(node7)
-// BST.add(node8)
-// // BST.add(node9)
-// // console.log(BST);
+let BST = new BinarySearchTree() 
+BST.add(node)
+BST.add(node2)
+BST.add(node3)
+BST.add(node4)
+BST.add(node5)
+BST.add(node6)
+BST.add(node7)
+BST.add(node8)
+BST.add(node9)
+// BST.add(node9)
+// console.log(BST);
 
-// const BT = new BinaryTree(BST.root)
-// console.log(BT);
-// console.log(BT.breadthFirst());
+const BT = new BinaryTree(BST.root)
+console.log(BT);
+console.log(BT.breadthFirst());
 
 module.exports = {
     BinarySearchTree,
