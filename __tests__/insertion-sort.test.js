@@ -1,0 +1,23 @@
+'use strict';
+
+const InsertionSort = require('../challenges/insertionSort/insertion-sort')
+
+let one = [2, 15, 8, 9, 0, 20]
+let two = [5, 8, 2, 33, 12, 100, 52]
+
+describe('Insertion Sort Testing :: ', () => {
+    it('1. “Happy Path” - Expected outcome ', () => {
+        let expectedOne = [0, 2, 8, 9, 15, 20]
+        let expectedTwo = [2, 5, 8, 12, 33, 52, 100]
+
+        expect(expectedOne).toEqual(InsertionSort(one))
+        expect(expectedTwo).toEqual(InsertionSort(two))
+        
+    })
+    
+    it('2. “Expected failure”  ', () => {
+        expect('ENTER AN ARRAY').toEqual(InsertionSort([]))
+
+    })
+
+})
