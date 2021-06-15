@@ -5,8 +5,8 @@
 
 Code challenge | Link | Code challenge | Link
 ------- | --------- | -------- | ----------
- code01 (arrayReverse) | [click-here](https://github.com/qaisw96/data-structures-and-algorithm-401/blob/main/challenges/arrayReverse/README.md) | code21 | [click-here]()
- code02 (arrayShift) | [click-here](https://github.com/qaisw96/data-structures-and-algorithm-401/blob/main/challenges/arrayShift/README.md) | code22 | [click-here]()
+ code01 (arrayReverse) | [click-here](https://github.com/qaisw96/data-structures-and-algorithm-401/blob/main/challenges/arrayReverse/README.md) | code26 | [click-here](https://github.com/qaisw96/data-structures-and-algorithm-401/blob/main/challenges/insertionSort/README.MD)
+ code02 (arrayShift) | [click-here](https://github.com/qaisw96/data-structures-and-algorithm-401/blob/main/challenges/arrayShift/README.md) | code27 | [click-here](https://github.com/qaisw96/data-structures-and-algorithm-401/blob/main/challenges/mergeSort/README.MD)
  code03 (arrayBinarySearch) | [click-here](https://github.com/qaisw96/data-structures-and-algorithm-401/blob/main/challenges/arrayBinarySearch/README.md) | code23 | [click-here]()
  code04 (Fibonacci Sequence) | [click-here](https://docs.google.com/spreadsheets/d/1CpezqtZaa3y27uW3SfV9SAEW0WQ0VYX_TiPpcwDwRkM/edit?usp=sharing) | code24 | [click-here]()
  code05 (linkedList 1) | [click-here](https://github.com/qaisw96/data-structures-and-algorithm-401/blob/main/challenges/linkedList/README.md) | code25 | [click-here]()
@@ -23,6 +23,4 @@ Code challenge | Link | Code challenge | Link
  code16 (Find-MAx-value-tree ) | [click-here](https://github.com/qaisw96/data-structures-and-algorithm-401/blob/main/challenges/tree/README.MD#find-maximum-value) | code36 | [click-here]() 
  code17 (Breadth First) | [click-here](https://github.com/qaisw96/data-structures-and-algorithm-401/blob/main/challenges/tree/README.MD#first-breadth-method) | code37 | [click-here]()
  code18 (FizzBuzzTree) | [click-here](https://github.com/qaisw96/data-structures-and-algorithm-401/blob/main/challenges/fizzBuzzTree/README.MD) | code38 | [click-here]()
- code19 | [click-here]() | code39 | [click-here]()
- code20 | [click-here]() | code40 | [click-here]()
 
