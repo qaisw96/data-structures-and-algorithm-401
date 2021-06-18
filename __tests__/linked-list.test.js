@@ -1,6 +1,6 @@
 'use strict'; 
 
-const LinkedList =require('../challenges/linkedList/linked-list')
+const LinkedList =require('../challenges/linkedList/linked-list').LinkedList
 // create new Linked list to test
 let ll = new LinkedList() 
 // create values to test 

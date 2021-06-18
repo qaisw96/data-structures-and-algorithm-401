@@ -1,6 +1,6 @@
 'use strict';
 
-const LinkedList = require('../challenges/linkedList/linked-list')
+const LinkedList = require('../challenges/linkedList/linked-list').LinkedList
 const zipLists = require('../challenges/llZip/ll-zip')
 
 describe('1. LL ZIP test', () => {

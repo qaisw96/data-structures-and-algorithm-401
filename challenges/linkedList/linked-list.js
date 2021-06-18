@@ -139,12 +139,11 @@ class LinkedList {
 
 
 
-module.exports = LinkedList
+module.exports = {
+    LinkedList,
+    Node
+} 
 
 
 
 
-let newNode = new LinkedList()
-newNode.insert(2)
-newNode.insert(4)
-console.log(newNode.toString());
