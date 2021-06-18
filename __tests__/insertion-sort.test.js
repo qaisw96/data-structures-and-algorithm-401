@@ -16,8 +16,6 @@ describe('Insertion Sort Testing :: ', () => {
     })
     
     it('2. “Expected failure”  ', () => {
-        expect('ENTER AN ARRAY').toEqual(InsertionSort([]))
-
+        expect([1]).toEqual(InsertionSort([1]))
     })
-
 })
