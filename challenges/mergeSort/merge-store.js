@@ -1,39 +1,27 @@
 'use strict';
 
-function MergeSort(arr) {
-    if(arr.length < 2) return arr
-    let n = Math.floor(arr.length / 2);
-    let left = arr.slice(0, n);
-    let right = arr.slice(n);
-    MergeSort(left)
-    MergeSort(right)
-    Merge(left, right, arr)
-    return arr;
-}
-function Merge(left, right, arr) {
-    let i = 0
-    let j = 0
-    let k = 0
-    while(i<left.length && j<right.length) {
-        if(left[i] <= right[j]) {
-            arr[k] = left[i]
-            i++
-        } else {
-            arr[k] = right[j]
-            j++
-        }
-        k++
+const merge = (leftArr, rightArr) => {
+    let result = []
+
+    while(leftArr.length && rightArr.length) {
+        leftArr[0] <= rightArr[0] ? result.push(leftArr.shift()) : result.push(rightArr.shift())
     }
-    while (i < left.length) {
-        arr[k] = left[i];
-        i++;
-        k++;
-      }
-      while (j < right.length) {
-        arr[k] = right[j];
-        j++;
-        k++;
-      }
+
+    while(leftArr.length) result.push(leftArr.shift())
+    while(rightArr.length) result.push(rightArr.shift())
+
+    return result
+}
+
+function MergeSort(arr) {
+    if(arr.length < 2) return arr;
+
+    const midInx = Math.floor(arr.length/2)
+
+    let leftArr = arr.slice(0, midInx)
+    let rightArr = arr.slice(midInx)
+
+    return merge(MergeSort(leftArr), MergeSort(rightArr))
 }
 
 module.exports = MergeSort
