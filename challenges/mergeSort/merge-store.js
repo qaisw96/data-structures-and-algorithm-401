@@ -11,6 +11,7 @@ const merge = (leftArr, rightArr) => {
     while(rightArr.length) result.push(rightArr.shift())
 
     return result
+
 }
 
 function MergeSort(arr) {
