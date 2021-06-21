@@ -1,4 +1,4 @@
-'use strict';
+// 'use strict';
 
 // const Node = require('../challenges/tree/node')
 // const BinarySearchTree = require('../challenges/tree/tree').BinarySearchTree
