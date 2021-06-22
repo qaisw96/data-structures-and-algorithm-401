@@ -19,3 +19,4 @@ describe('Insertion Sort Testing :: ', () => {
         expect([1]).toEqual(InsertionSort([1]))
     })
 })
+
