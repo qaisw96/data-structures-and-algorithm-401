@@ -5,8 +5,8 @@ const zipLists = require('../challenges/llZip/ll-zip')
 
 describe('1. LL ZIP test', () => {
     it('When the LL1 == LL2', () => {
-        const LL1 = new LinkedList()
-        const LL2 = new LinkedList()
+        let LL1 = new LinkedList()
+        let LL2 = new LinkedList()
         LL1.insert(1)
         LL1.insert(3)
         LL1.insert(5)
@@ -26,8 +26,8 @@ describe('1. LL ZIP test', () => {
 
     })
     it('2. When the LL1 > LL2', () => {
-        const LL1 = new LinkedList()
-        const LL2 = new LinkedList()
+        let LL1 = new LinkedList()
+        let LL2 = new LinkedList()
         LL1.insert(1)
         LL1.insert(3)
         LL1.insert(5)
@@ -48,8 +48,8 @@ describe('1. LL ZIP test', () => {
 
     })
     it('3. When the LL1 < LL2', () => {
-        const LL1 = new LinkedList()
-        const LL2 = new LinkedList()
+        let LL1 = new LinkedList()
+        let LL2 = new LinkedList()
         LL1.insert(1)
         LL1.insert(3)
         LL1.insert(5)

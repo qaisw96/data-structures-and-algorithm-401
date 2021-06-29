@@ -45,7 +45,6 @@ class BinaryTree {
         }
         traverse(this.root)
         return result
-
     }
 
     findMaximumValue() {
@@ -62,7 +61,7 @@ class BinaryTree {
             return 'YOUR TREE IS EMPTY'
         }
     }
-
+    
     breadthFirst() {
         if(!this.root) return 'YOUR TREE IS EMPTY'
         let result = [];
@@ -86,6 +85,7 @@ class BinaryTree {
         traverse(this.root)
         return result
     }
+    
 }
 
 
@@ -101,18 +101,10 @@ class BinarySearchTree {
         }else {
             let traverse = (node) => {
                 if(newNode.value <= node.value) {
-                    if(node.left) {
-                        traverse(node.left)
-                    } else {
-                        node.left = newNode
-                    }
+                    node.left ? traverse(node.left) :  node.left = newNode
                 } 
                 if(newNode.value >= node.value) {
-                    if(node.right) {
-                        traverse(node.right)
-                    } else {
-                        node.right = newNode
-                    }
+                    node.right ? traverse(node.right) :  node.right = newNode
                 } 
             }
             traverse(this.root)
@@ -128,24 +120,14 @@ class BinarySearchTree {
 
                     if(value <= node.value) {
                         if(node.left) {
-                            if(node.left.value == value) {
-                                return true
-                            } else {
-                                traverse(node.right)
-                            }
+                            node.left.value == value ?  true : traverse(node.right)
                         } else {
                             return false
                         }
                     }
-                    
-                    
                     if(value > node.value) {
                         if(node.right) {
-                            if(node.right.value == value) {
-                                return true; 
-                            } else {
-                                traverse(node.left)
-                            }
+                            node.right.value == value ? true : traverse(node.left)
                         } else {
                             return false; 
                         }
