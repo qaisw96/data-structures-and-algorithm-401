@@ -7,6 +7,7 @@ Graphs is a non-linear data structure that can be looked at as a collection of v
 + get nodes
 + get neighbors
 + size
++ graph-breadth-first
 
 ## Approach & Efficiency
 Logic Sequence 
@@ -23,3 +24,13 @@ Returns all of the nodes in the graph as a collection (set, list, or similar)
 Returns a collection of edges connected to the given node
 5. size
 Returns the total number of nodes in the graph
+6. graph-breadth-first 
+Return A collection of nodes in the order they were visited.
+
+----------------------------------------------------------
+
+## graph-breadth-first 
+### Challenge
+Return A collection of nodes in the order they were visited.
+### Solution
+![whiteboard](../../assets/images/code36.png)

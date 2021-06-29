@@ -1,5 +1,8 @@
 'use strict';
 
+const Queue = require('../stacksAndQueues/stacks-and-queues').Queue
+
+
 class Vertex {
     constructor(value) {
         this.value = value
@@ -48,6 +51,25 @@ class Graph {
        return this.getAllVertex().length
     }
 
+    breadthFirst(vertex) {
+        if(!vertex) return
+
+        const output = []
+        let q = new Queue()
+        q.enqueue(vertex)
+
+        while(!q.isEmpty()) {
+            let front = q.dequeue()
+            output.push(front)
+            let neighbors = this.getNeighbors(front)
+            if(neighbors) {
+                neighbors.forEach(item => {
+                    q.enqueue(item.vertex)
+                })
+            } 
+        }
+        return output
+    }
 }
 
 module.exports = {

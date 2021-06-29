@@ -39,14 +39,33 @@ describe(' GRAPH Testing :: ', () => {
 
         const expected = [{ value: 0 }, { value: 1 }, { value: 2 }, { value: 3 }, { value: 4 }, { value: 5 }, { value: 6 }, { value: 7 } ]
         expect(newGraph.getAllVertex()).toEqual(expected);
+        // console.log(newGraph.getNeighbors(two));
+      
+        console.log(newGraph.breadthFirst(one));
         
         expect(newGraph.getNeighbors(five).length).toEqual(0);
         expect(newGraph.getNeighbors(two).length).toEqual(2);
         expect(newGraph.getNeighbors(one).length).toEqual(3);
         
     })
+
+    it('2. graph-breadth-first  :):: ', () => {
     
-    it('2. “Expected failure”  :(:: ', () => {
+       
+        let expected =   [
+            { value: 1 },
+            { value: 3 },
+            { value: 6 },
+            { value: 7 },
+            { value: 5 }
+        ]
+   
+        expect(newGraph.breadthFirst(one)).toEqual(expected);
+      
+        
+    })
+    
+    it('3. “Expected failure”  :(:: ', () => {
         expect(newGraph.getNeighbors({value: 22})).toEqual('Does Not Exist');
         
     })
