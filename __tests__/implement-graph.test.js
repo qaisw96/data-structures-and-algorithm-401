@@ -66,6 +66,7 @@ describe(' GRAPH Testing :: ', () => {
     })
     
     it('3. “Expected failure”  :(:: ', () => {
+        console.log(newGraph.getNeighbors(two).map(item => item));
         expect(newGraph.getNeighbors({value: 22})).toEqual('Does Not Exist');
         
     })

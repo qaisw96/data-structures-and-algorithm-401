@@ -18,8 +18,8 @@ class BinaryTree {
         let result = [];
         let traverse = (node) => {
             result.push(node.value)
-            if(node.left) traverse(node.left)
-            if(node.right) traverse(node.right)
+            if(node.left) traverse(node.left) 
+            if(node.right) traverse(node.right) 
         }
         traverse(this.root)
         return result
@@ -28,9 +28,11 @@ class BinaryTree {
     inOrder() {
         let result = [];
         let traverse = (node) => {
-            if(node.left) traverse(node.left)
+            if(node === null) return 
+
+            traverse(node.left)
             result.push(node.value)
-            if(node.right) traverse(node.right)
+            traverse(node.right)
         }
         traverse(this.root)
         return result
@@ -98,7 +100,7 @@ class BinarySearchTree {
     add(newNode) {
         if(!this.root) {
             this.root = newNode 
-        }else {
+        } else {
             let traverse = (node) => {
                 if(newNode.value <= node.value) {
                     node.left ? traverse(node.left) :  node.left = newNode
